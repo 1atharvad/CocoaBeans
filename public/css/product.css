@@ -1,0 +1,106 @@
+@import url("/css/header.css");
+@import url("/css/footer.css");
+
+.product-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 40px 10%;
+}
+
+.product-container .box-image {
+    width: 40%;
+}
+
+.product-container .box-image img {
+    width: 100%;
+}
+
+.product-container .product-info {
+    width: 55%;
+}
+
+.product-container .product-info h1 {
+    font-size: 32px;
+    letter-spacing: 3px;
+}
+
+table {
+    width: 100%;
+    border-spacing: 0 18px;
+}
+
+table tr {
+    padding: 10px 0;
+}
+
+tr.bar td {
+    background-color: teal;
+    height: 6px;
+}
+
+tr.quantity td:nth-child(2) {
+    display: flex;
+}
+
+tr.quantity td:nth-child(2) button {
+    font-size: 25px; 
+    padding: 0 12px;
+    background-color: white;
+    border: 1px solid gray;
+    cursor: pointer;
+    outline: none;
+}
+
+tr.quantity td:nth-child(2) input {
+    width: 50px;
+    padding: 6px 0;
+    font-size: 18px;
+    text-align: center;
+    pointer-events: none;
+    border: 1px solid gray;
+}
+
+tr.cart td {
+    width: 45%;
+}
+
+tr.cart button {
+    width: 95%;
+    padding: 7px 0;
+    font-size: 17px;
+    margin: auto 2.5%;
+    border: 1px solid black;
+    border-radius: 30px;
+    outline: none;
+    cursor: pointer;
+}
+
+tr.buyNow button {
+    width: 97.5%;
+    padding: 7px 0;
+    font-size: 17px;
+    margin: auto 1.25%;
+    border: 1px solid black;
+    border-radius: 30px;
+    outline: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+    .product-container .box-image {
+        width: 50%;
+    }
+    .product-container .product-info {
+        width: 45%;
+    }
+    .product-container .product-info h1 {
+        font-size: 29px;
+    }
+    tr.cart button {
+        font-size: 16px;
+    }
+    tr.buyNow button {
+        font-size: 16px;
+    }
+}

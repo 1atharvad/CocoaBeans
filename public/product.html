@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="/css/product.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+		<title>Cocoa Bean</title>
+    </head>
+    <body>
+		<header></header>
+		<main>
+            <div class="product-container">
+                <div class="box-image">
+                    <img src="/images/img5.jpg">
+                </div>
+                <div class="product-info">
+                    <h1>Mint Chocolate</h1>
+                    <table>
+                        <tr class="price">
+                            <td>Price:</td>
+                            <td>Rs. <span>300</span></td>
+                        </tr>
+                        <tr class="bar">
+                            <td colspan="2"></td>
+                        </tr>
+                        <tr class="availability">
+                            <td>Availability:</td>
+                            <td><span>5</span> In Stock</td>
+                        </tr>
+                        <tr class="quantity">
+                            <td>Quantity:</td>
+                            <td>
+                                <button class="minus">&minus;</button>
+                                <input type="text" id="quantity" value="1" min="1">
+                                <button class="plus">&plus;</button>
+                            </td>
+                        </tr>
+                        <tr class="subtotal">
+                            <td>Subtotal:</td>
+                            <td>Rs. <span></span></td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr class="cart">
+                            <td><button>Add to Cart</button></td>
+                            <td><button>Add to Wishlist</button></td>
+                        </tr>
+                        <tr class="buyNow">
+                            <td colspan="2"><button>Buy Now</button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+		</main>
+		<footer></footer>
+
+		<script type="text/javascript" src="/js/header&footer.js"></script>
+		<script type="text/javascript" src="/js/product.js"></script>
+    </body>
+</html>

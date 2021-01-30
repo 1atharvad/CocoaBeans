@@ -1,0 +1,163 @@
+footer {
+	margin: auto;
+	align-items: center;
+	padding-top: 35px;
+	color: white;
+	background-color: #3a1c17;
+}
+
+.footer-content {
+	display: flex;
+	margin: 0px 15%;
+	justify-content: space-between;
+}
+
+.footer-content div {
+	width: 90%;
+}
+
+.contact h4 {
+	font-size: 16px;
+	font-weight: 400;
+	padding: 5px 0px;
+}
+
+.contact p {
+	font-size: 16px;
+	font-weight: 400;
+	color: #d3d3d3;
+	opacity: .8;
+}
+
+.social-media {
+	display: flex;
+	padding-top: 10px;
+}
+
+.social-media .facebook, .social-media .instagram, .social-media .whatsapp {
+	width: 52px;
+	margin: 20px 15px;
+	padding: 12px 13px 7px 13px;
+	border: 2px solid #c0c0c0; 
+	border-radius: 25px;
+	opacity: .8;
+}
+
+.feedback-form h4 {
+	font-size: 20px;
+	margin-bottom: 12px;
+}
+
+.feedback-form input {
+	width: 100%;
+	height: 45px;
+	font-size: 16px;
+	font-family: Poppins;
+	margin: 5px auto;
+	border: 1px solid black;
+	border-radius: 6px;
+	padding-left: 10px;
+	outline: none;
+}
+
+.feedback-form textarea{
+	width: 100%;
+	font-size: 16px;
+	font-family: Poppins;
+	border: 1px solid black;
+	min-height: 100px;
+	resize: none;
+	outline: none;
+	border-radius: 6px;
+	padding-left: 10px;
+	padding-top: 7px;
+	margin: 5px auto;
+}
+
+.feedback-form button {
+	padding: 8px 20px;
+	width: 40%;
+	font-size: 17px;
+	font-family: Poppins;
+	color: white;
+	background-color: #0f3959;
+	border: 1px solid black;
+	border-radius: 11px; 
+	text-transform: uppercase;
+	cursor: pointer;
+	margin-top: 8px;
+	outline: none;
+}
+
+.footer-bottom {
+	width: 100%;
+	margin-top: 20px;
+	padding: 12px 0px;
+	color: white;
+	background-color: rgba(0, 0, 0, .5);
+	text-align: center; 
+}
+
+.footer-bottom p {
+	font-size: 14px;
+}
+
+.footer-bottom span {
+	opacity: .5;
+}
+
+@media screen and (max-width: 900px) {
+	.footer-content {
+		margin: 0px 8%;
+	} 
+}
+
+@media screen and (max-width: 700px) {
+	.footer-content {
+		display: flex;
+		margin: 0px 20%;
+		flex-direction: column;
+	} 
+
+	.footer-content div {
+		width: 100%;
+	}
+
+	.footer-content .social-media {
+		margin-bottom: 40px;
+	}
+}
+
+@media screen and (max-width: 530px) {
+	.footer-content {
+		margin: 0px 10%;
+	} 
+}
+
+
+
+/*For contact footer*/
+
+#contact-footer {
+	padding: 0px;
+}
+
+#contact-footer .footer .footer-content {
+	display: none;
+}
+
+#contact-footer .footer .footer-bottom {
+	margin-top: 0px;
+}
+
+@media screen and (max-width: 720px) {
+	#contact-footer {
+		padding-top: 35px;
+	}
+	#contact-footer .footer .footer-content {
+		display: flex;
+	}
+	#contact-footer .footer .footer-bottom {
+		margin-top: 20px;
+	}	
+}

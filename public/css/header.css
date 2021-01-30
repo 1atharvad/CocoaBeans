@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+:root{
+	--navbar-text-color: #cfcd33;
+	--navbar-background-color: #5a291a;
+	--hover-navbar-text-color: #333333;
+	--hover-navbar-background-color: #008cba;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+}
+
+
+
+/* NavBar CSS */
+
+header {
+	display: flex;
+	position: sticky;
+	top: 0px;
+	margin: auto;
+	justify-content: space-between;
+	align-items: center;
+	padding: 18px 10%;
+	background-color: var(--navbar-background-color);
+	z-index: 5;
+}
+
+.logo-container {
+	cursor: pointer;
+	z-index: 1;
+}
+
+.logo-container h2 {
+	font-weight: 600;
+	color: var(--navbar-text-color);
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	font-size: 24px;
+}
+
+.nav_links {
+	position: sticky;
+	top: 0px;
+	list-style: none;
+}
+
+.nav-links li {
+	display: inline-block;
+	padding: 0px 10px;
+}
+
+.nav-links li a {
+	color: var(--navbar-text-color);
+	font-weight: 500;
+	text-decoration-line: none;
+	padding: 5px 10px;
+}
+
+.nav-links li a:hover {
+	border-bottom: 3px solid white;
+	border-radius: 2px;
+}
+
+.burger {
+	display: none;
+	cursor: pointer;
+}
+
+.burger div{
+	width: 21px;
+	height: 3px;
+	background-color: var(--navbar-text-color);
+	margin: 4px;
+	transition: all 0.5s ease; 
+}
+
+@media screen and (max-width: 870px) {
+	header {
+		padding: 18px 7%;
+	}
+	.nav-links li a {
+		padding: 18px 5px;
+	}
+}
+
+@media screen and (max-width: 720px) {
+	.logo-container h2 {
+		font-size: 21px; 
+	}
+	.nav-links li a {
+		font-size: 15px;
+	}
+}
+
+@media screen and (max-width: 670px) {
+	body {
+		overflow-x: hidden;
+	}
+	header {
+		padding: 18px 10%;
+	}
+	.nav-links {
+		display: flex;
+		position: absolute;
+		right: 0px;
+		height: 320px;
+		top: 65px;
+		background-color: var(--navbar-background-color); 
+		opacity: 0.95;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		transform: translateY(-100%);
+	}
+	.nav-links li {
+		opacity: 0;
+		padding: 25px 10px;		
+	}
+	.nav-links li a:hover {
+		border-radius: 2px;
+	}
+	.burger {
+		display: block;
+		z-index: 1;
+	}
+}
+
+.nav-active {
+	transform: translateY(0%);
+	transition: transform 0.5s ease-in;
+}
+
+@keyframes navLinkFade {
+	from {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0px); 
+	}
+}
+
+.toggle .line1 {
+	transform: rotate(-45deg) translate(-3px, 4px);
+}
+
+.toggle .line2 {
+	opacity: 0;
+}
+
+.toggle .line3 {
+	transform: rotate(45deg) translate(-5px, -6px);
+}

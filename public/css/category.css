@@ -1,0 +1,167 @@
+@import url("/css/header.css");
+@import url("/css/footer.css");
+
+main {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 20px 5%;
+}
+
+.nav {
+    width: 18%;
+}
+
+.nav h4 {
+    margin: 17px auto;
+    font-weight: 100;
+}
+
+.nav h4:first-child {
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.nav h4 a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav h4 a:hover {
+    color: #b8733a;
+}
+
+.product-container {
+    width: 77%;
+}
+
+.taskbar {
+    background-color: aliceblue;
+    border: 1px solid antiquewhite;
+    padding: 10px 25px;
+    font-size: 16px;
+}
+
+.taskbar a {
+    text-decoration: none;
+}
+
+.product-list {
+    display: flex;
+    margin: 20px 0;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.product-list > div {
+    width: 30%;
+    border: 1px solid black;
+    padding: 0 0 15px 0;
+    box-shadow: 5px 5px 8px #888888;
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+.product-list > div:first-child {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    margin: 0;
+    padding: 0;
+    visibility: hidden;
+}
+
+.product-list > div .box {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-list > div .box img {
+    width: 100%;
+    transition:all .8s ease;
+}
+
+.product-list > div .box img:hover {
+    transform: scale(1.2);
+}
+
+.product-list > div h3 {
+    font-size: 18px;
+    color: #8b5824;
+    margin: 8px auto;
+    padding: 0 17px;
+}
+
+.product-list > div h4 {
+    font-size: 17px;
+    color: rgb(83, 83, 83);
+    padding: 0 17px;
+}
+
+.product-list > div button {
+    width: 70%;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-family: Poppins;
+    margin: auto 15%;
+    font-size: 17px;
+    font-weight: 500;
+    background-image: linear-gradient(to right, #1d5b96, #4db4dd);
+    color: white;
+}
+
+@media screen and (max-width: 1200px) {
+    .nav {
+        width: 16%;
+    }
+    .product-container {
+        width: 79%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .nav {
+        position: absolute;
+        width: 250px;
+        height: 50%;
+        background-color: white;
+        margin: 0 0 0 -5%;
+        display: none;
+    } /*nav still to be done*/
+    .product-container {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .product-list > div {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    main {
+        width: 80%;
+        margin: 20px 10%;
+    }
+    .product-list {
+        flex-direction: column;
+    }
+    .product-list > div {
+        width: 100%;
+    }
+    .product-list .stub {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .taskbar {
+        padding-left: 15px;
+        font-size: 15px;
+    }
+}
