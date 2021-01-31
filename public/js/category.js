@@ -34,7 +34,7 @@ function createProductGrid(columns) {
             if (index !== 0) {
                 product.addEventListener("click", function() {
                     productName = product.querySelector("h3").innerText;
-                    location.href = `./category/${category}/${productName.toLowerCase().split(" ").join("-")}`;
+                    location.href = `/category/${category}/${productName.toLowerCase().split(" ").join("-")}`;
                 });
             }
         });

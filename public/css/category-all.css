@@ -1,0 +1,50 @@
+@import url("/css/header.css");
+@import url("/css/footer.css");
+
+.category-options {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.category-options a {
+    width: 50%;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.category-options a img {
+    width: 100%;
+    height: 100%;
+}
+
+.category-options a .labels {
+    position: absolute;
+    display: flex;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: white;
+    letter-spacing: 2px;
+    font-weight: 400;
+    z-index: 1;
+}
+
+.category-options a:after {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    top: 0;
+    position: absolute;
+}
+
+@media screen and (max-width: 767px) {
+    .category-options a {
+        width: 100%;
+    }
+}
