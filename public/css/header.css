@@ -134,8 +134,7 @@ header {
 }
 
 .nav-active {
-	transform: translateY(0%);
-	transition: transform 0.5s ease-in;
+	transform: translateY(0%);	
 }
 
 @keyframes navLinkFade {

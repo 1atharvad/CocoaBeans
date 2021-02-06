@@ -14,41 +14,36 @@ firebase.analytics();
 //For navbar
 
 function navSlide() {
-	const burger = document.querySelector('.burger');
-	const nav = document.querySelector('.nav-links');
-	const navLinks = document.querySelectorAll('.nav-links li');
-
-	window.addEventListener('resize', function() {
+	$(window).on('resize', () => {
 		//Toggle back to close mode
-		if (nav.classList.value == 'nav-links nav-active') {
-			nav.classList.toggle('nav-active');
-		}
-		else {
-			nav.style.transition = '';
+		if ($('.nav-links').hasClass('nav-active')) {
+			$('.nav-active').removeClass('nav-active');
+		} else {
+			$('.nav-links').css({transition: ""});
 		}
 
 		//Removing animation for the links for navbar
-		navLinks.forEach(function(link) {
+		$('.nav-links li').each((_, link) => {
 			if (link.style.animation) {
 				link.style.animation = '';
 			}
 		});
 
 		//Toggle back from X to burger
-		if (burger.classList.value == 'burger toggle') {
-			burger.classList.toggle('toggle');
+		if ($('.burger').hasClass('toggle')) {
+			$('.burger').toggleClass('toggle');
 		}
 	});
 
-	burger.addEventListener('click', function() {
+	$('.burger').on('click', () => {
 		//Navbar off animation
-		nav.style.transition = `transform 0.5s ease-in`;
+		$('.nav-links').css({transition: `transform 0.5s ease-in`});
 
 		//Toggle the navbar
-		nav.classList.toggle('nav-active');
+		$('.nav-links').toggleClass('nav-active');
 
 		//Navigate navbar links animation
-		navLinks.forEach(function(link, index) {
+		$('.nav-links li').each(function(index, link) {
 			if (link.style.animation) {
 				link.style.animation = '';
 			} else {
@@ -57,52 +52,30 @@ function navSlide() {
 		});
 
 		//Burger Animation
-		burger.classList.toggle('toggle');
+		$('.burger').toggleClass('toggle');
 	});
 }
 
 // For feedback
 
 function submitFeedback() {
-	document.getElementById("submit_modal").addEventListener("click", function () {
-		var fd_name = document.getElementById('fd_name').value;
-		var fd_email = document.getElementById('fd_email').value;
-		var fd_message = document.getElementById('fd_message').value;
-
-		var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-
-		var d = new Date();
-		var hours = d.getHours();
-		var mins = d.getMinutes();
-
-		console.log((mins<10));
+	$("#submit_modal").on("click", () => {
+		const mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
 		//Validates whether the name, email, and phone are valid, if true make
 		//make an entry in firebase realtime database. 
-		if ((fd_name != "") && (mailformat.test(fd_email) == true)) {
-			var d = new Date();
-			var date = d.getDate();
-			var month = d.getMonth()+1;
-			var year = d.getFullYear();
-			var hours = d.getHours();
-			var mins = d.getMinutes();
+		if (($('#fd_name').val() != "") && (mailformat.test($('#fd_email').val()) == true)) {
+			var date = new Date();
 
-			if (hours<10 == true) {
-				hours = "0" + hours;
-			}
-			if (mins<10 == true) {
-				mins = "0" + mins;
-			}
-
-			firebase.database().ref('feedback/'+year+'/'+month+'/'+date).push({
-				name: fd_name,
-				email: fd_email,
-				time: hours+':'+mins,
-				message: fd_message
+			firebase.database().ref(`feedback/${date.getFullYear()}/${date.getMonth()+1}/${date.getDate()}`).push({
+				name: $('#fd_name').val(),
+				email: $('#fd_name').val(),
+				time: `${`0${date.getHours()}`.slice(-2)}:${`0${date.getMinutes()}`.slice(-2)}`,
+				message: $('#fd_message').val()
 			});
-			document.getElementById('fd_name').value = "";
-			document.getElementById('fd_email').value = "";
-			document.getElementById('fd_message').value = "";
+			$('#fd_name').val() = "";
+			$('#fd_email').val() = "";
+			$('#fd_message').val() = "";
 
 			alert("Your feedback has been recorded");
 		}

@@ -30,10 +30,10 @@ function createProductGrid(columns) {
             }
             i++;
         }
-        document.querySelectorAll(".product-list > div").forEach(function(product, index) {
+        $(".product-list > div").each(function(index) {
             if (index !== 0) {
-                product.addEventListener("click", function() {
-                    productName = product.querySelector("h3").innerText;
+                $(this).on("click", () => {
+                    productName = $(this).find("h3").text();
                     location.href = `/category/${category}/${productName.toLowerCase().split(" ").join("-")}`;
                 });
             }
@@ -44,7 +44,7 @@ function createProductGrid(columns) {
 function screenChange() {
     var column;
 
-    if (window.innerWidth<700 === true) {
+    if ($(window).width()<700 === true) {
         column = 2;
     } else {
         column = 3;
@@ -52,9 +52,8 @@ function screenChange() {
     createProductGrid(column);
     var flag = column;
 
-    window.addEventListener("resize", function() {
-        console.log(window.innerWidth);
-        if (window.innerWidth<700 === true) {
+    $(window).on("resize", function() {
+        if ($(window).width() === true) {
             column = 2;
         } else {
             column = 3;
@@ -62,14 +61,13 @@ function screenChange() {
         if (flag !== column) {
             flag = column;
             createProductGrid(column);
-            console.log(column)
         }
     })
 }
 
 function getURL() {
     category = location.pathname.split("/")[2]; 
-    document.querySelector(".taskbar .category").innerHTML = "> " + category.charAt(0).toUpperCase() + category.slice(1);
+    $(".taskbar .category").html("> " + category.charAt(0).toUpperCase() + category.slice(1));
     database = database.ref("products/" + category);
     screenChange();
 }
