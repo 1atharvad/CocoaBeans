@@ -1,27 +1,21 @@
-function changeQuantity() {
-    var plusBtn = document.querySelector(".quantity .plus");
-    var minusBtn = document.querySelector(".quantity .minus");
-    var quantity = document.querySelector(".quantity input");
-
-    plusBtn.addEventListener("click", function() {
-        quantity.value = parseInt(quantity.value)+1;
-        changeAmount(300);
+function changeQuantity(price) {
+    $(".quantity .plus").on("click", function() {
+        $(".quantity input").val(parseInt($(".quantity input").val())+1);
+        changeAmount(price);
     });
 
-    minusBtn.addEventListener("click", function() {
-        if ((parseInt(quantity.value)-1 < 1) === false) {
-            quantity.value = parseInt(quantity.value)-1;
-            changeAmount(300);
+    $(".quantity .minus").on("click", function() {
+        if ((parseInt($(".quantity input").val())-1 < 1) === false) {
+            $(".quantity input").val(parseInt($(".quantity input").val())-1);
+            changeAmount(price);
         }
     });
 }
 
-function changeAmount(amount) {
-    var quantity = document.querySelector(".quantity input");
-    var subtotal = document.querySelector(".subtotal span");
-    
-    subtotal.innerHTML = amount*parseInt(quantity.value);
+function changeAmount(price) {
+    $(".subtotal span").text(price*parseInt($(".quantity input").val()));
 }
 
-changeQuantity();
-changeAmount(300);
+var price = 300;
+changeQuantity(price);
+changeAmount(price);

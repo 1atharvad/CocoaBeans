@@ -59,23 +59,23 @@ function navSlide() {
 // For feedback
 
 function submitFeedback() {
-	$("#submit_modal").on("click", () => {
+	$(".feedback-form #submit_modal").on("click", () => {
 		const mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
 		//Validates whether the name, email, and phone are valid, if true make
 		//make an entry in firebase realtime database. 
-		if (($('#fd_name').val() != "") && (mailformat.test($('#fd_email').val()) == true)) {
+		if (($('.feedback-form #fd_name').val() !== "") && (mailformat.test($('.feedback-form #fd_email').val()) === true)) {
 			var date = new Date();
 
 			firebase.database().ref(`feedback/${date.getFullYear()}/${date.getMonth()+1}/${date.getDate()}`).push({
-				name: $('#fd_name').val(),
-				email: $('#fd_name').val(),
+				name: $('.feedback-form #fd_name').val(),
+				email: $('.feedback-form #fd_name').val(),
 				time: `${`0${date.getHours()}`.slice(-2)}:${`0${date.getMinutes()}`.slice(-2)}`,
-				message: $('#fd_message').val()
+				message: $('.feedback-form #fd_message').val()
 			});
-			$('#fd_name').val() = "";
-			$('#fd_email').val() = "";
-			$('#fd_message').val() = "";
+			$('.feedback-form #fd_name').val("");
+			$('.feedback-form #fd_email').val("");
+			$('.feedback-form #fd_message').val("");
 
 			alert("Your feedback has been recorded");
 		}
