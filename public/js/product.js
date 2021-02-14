@@ -39,9 +39,10 @@ function getProduct(category, productName) {
             product = data[key];
         }
     });
+    $(`.box-image img`).attr("src", `/images/${product.image}`);
     $(".product-info #product-name").text(product.name);
-    $(".price span").text(product.price);
-    $(".availability span").text(product.stock);
+    $(".product-info .price span").text(product.price);
+    $(".product-info .availability span").text(product.stock);
     changeQuantity(parseInt(product.stock), product.price);
     changeAmount(product.price);
 }
