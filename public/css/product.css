@@ -4,8 +4,9 @@
 .product-container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 80%;
-    margin: 40px 10%;
+    margin: 40px auto;
 }
 
 .product-container .box-image {
@@ -14,6 +15,7 @@
 
 .product-container .box-image img {
     width: 100%;
+    border-radius: 3px;
 }
 
 .product-container .product-info {
@@ -28,6 +30,7 @@
 table {
     width: 100%;
     border-spacing: 0 18px;
+    font-size: 18px;
 }
 
 table tr {
@@ -61,25 +64,42 @@ tr.quantity td:nth-child(2) input {
     border: 1px solid gray;
 }
 
+tr.subtotal td:nth-child(2) {
+    color: #946800;
+}
+
 tr.cart td {
     width: 45%;
 }
 
 tr.cart button {
     width: 95%;
-    padding: 7px 0;
-    font-size: 17px;
+    padding: 12px 0;
+    font-size: 16px;
+    font-family: Poppins;
+    text-transform: uppercase;
     margin: auto 2.5%;
     border: 1px solid black;
-    border-radius: 30px;
+    border-radius: 5px;
     outline: none;
     cursor: pointer;
+}
+
+tr.cart .cartBtn {
+    background-color: #6e3302;
+    color: white;
+}
+
+tr.cart .buyNow {
+    background-color: #d07347;
+    color: white;
 }
 
 tr.buyNow button {
     width: 97.5%;
     padding: 7px 0;
     font-size: 17px;
+    font-family: Poppins;
     margin: auto 1.25%;
     border: 1px solid black;
     border-radius: 30px;
@@ -88,6 +108,9 @@ tr.buyNow button {
 }
 
 @media screen and (max-width: 900px) {
+    .product-container {
+        width: 85%;
+    }
     .product-container .box-image {
         width: 50%;
     }
@@ -102,5 +125,21 @@ tr.buyNow button {
     }
     tr.buyNow button {
         font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .product-container {
+        flex-direction: column;
+        margin: 30px auto;
+    }
+    .product-container .product-info,  .product-container .box-image{
+        width: 100%;
+    }
+    .product-container .product-info {
+        margin-top: 30px;
+    }
+    .product-container .product-info h1 {
+        font-size: 27px;
     }
 }

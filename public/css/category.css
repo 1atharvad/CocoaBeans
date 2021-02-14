@@ -13,7 +13,8 @@ main {
 }
 
 .nav h4 {
-    margin: 17px auto;
+    margin: 9px 0;
+    padding: 8px;
     font-weight: 100;
 }
 
@@ -29,6 +30,11 @@ main {
 
 .nav h4 a:hover {
     color: #b8733a;
+}
+
+.selected_category {
+    background-color: #dde3e7;
+    border-radius: 3px;
 }
 
 .product-container {
@@ -58,6 +64,7 @@ main {
     border: 1px solid black;
     padding: 0 0 15px 0;
     box-shadow: 5px 5px 8px #888888;
+    border-radius: 4px;
     margin: 20px 0;
     cursor: pointer;
 }
@@ -112,6 +119,14 @@ main {
     font-weight: 500;
     background-image: linear-gradient(to right, #1d5b96, #4db4dd);
     color: white;
+}
+
+.not-found {
+    display: none;
+    background-color: rgb(197, 194, 194);
+    padding: 80px;
+    text-align: center;
+    border-radius: 4px;
 }
 
 @media screen and (max-width: 1200px) {

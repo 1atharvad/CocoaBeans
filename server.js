@@ -13,6 +13,10 @@ app.get('/category/:category', (req, res) => {
     res.sendFile("./category.html", {root: path.join(__dirname, "public")});
 });
 
+app.get('/category/:category/:product', (req, res) => {
+    res.sendFile("./product.html", {root: path.join(__dirname, "public")});
+});
+
 app.get('/contact', (req, res) => {
     res.sendFile("./contact.html", {root: path.join(__dirname, "public")});
 });
