@@ -1,6 +1,7 @@
 var category;
 
 function getDatabase(columns) {
+    console.log(firebase.database())
     var data = JSON.parse(sessionStorage.getItem(category));
     if (data !== null) {
         createProductGrid(columns, data);
@@ -84,6 +85,7 @@ function getURL() {
     });
     $(".taskbar .category").html(`> ${cate.join(" ")}`);
     $(".nav h4").each(function(index) {
+        console.log(index, $(".nav h4").length-1)
         if (index !== 0) {
             if(category === $(this).children().text().toLowerCase().replace(" ", "-")) {
                 $(this).addClass("selected_category");

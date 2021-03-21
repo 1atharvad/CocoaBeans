@@ -9,6 +9,10 @@ app.get('/category', (req, res) => {
     res.sendFile("./category-all.html", {root: path.join(__dirname, "public")});
 });
 
+app.get('/category/custom-boxes', (req, res) => {
+    res.sendFile("./custom-box.html", {root: path.join(__dirname, "public")});
+});
+
 app.get('/category/:category', (req, res) => {
     res.sendFile("./category.html", {root: path.join(__dirname, "public")});
 });

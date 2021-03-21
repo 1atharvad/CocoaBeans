@@ -127,6 +127,7 @@ main {
     padding: 80px;
     text-align: center;
     border-radius: 4px;
+    margin-bottom: 209px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -153,6 +154,9 @@ main {
 }
 
 @media screen and (max-width: 700px) {
+    .not-found {
+        margin-bottom: 80px;
+    }
     .product-list > div {
         width: 45%;
     }
